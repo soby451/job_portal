@@ -8,8 +8,8 @@
    <link rel="stylesheet" href="./style.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
 </head>
 <body class="Body">
@@ -18,36 +18,72 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <!-- Signup -->
-    <div class="signup p-4">
+    <div class="signup">
       <form>
         <label for="chk">Sign up</label>
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Username" required>
+        <div class="form-container">
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Username" required>
+          </div>
+          <div class="mb-2">
+            <input type="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="mb-2">
+            <input type="password" class="form-control" placeholder="Password" required>
+          </div>
+          <div class="mb-2">
+            <input type="password" class="form-control" placeholder="Confirm Password" required>
+          </div>
+          <button type="submit" class="btn btn-custom">Sign up</button>
+          
+          <div class="social-divider">
+            <span>OR</span>
+          </div>
+          
+          <div class="social-login">
+            <div class="social-btn google">
+              <i class="fab fa-google"></i>
+            </div>
+            <div class="social-btn facebook">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-btn linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Email" required>
-        </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" placeholder="Confirm Password" required>
-        </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn btn-custom w-100">Sign up</button>
       </form>
     </div>
 
     <!-- Login -->
-    <div class="login p-4">
+    <div class="login">
       <form>
         <label for="chk">Log in</label>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Email" required>
+        <div class="form-container">
+          <div class="mb-2">
+            <input type="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="mb-2">
+            <input type="password" class="form-control" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-custom">Sign in</button>
+          
+          <div class="social-divider">
+            <span>OR</span>
+          </div>
+          
+          <div class="social-login">
+            <div class="social-btn google">
+              <i class="fab fa-google"></i>
+            </div>
+            <div class="social-btn facebook">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-btn linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn btn-custom w-100">Sign in</button>
       </form>
     </div>
   </div>

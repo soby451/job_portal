@@ -1,9 +1,10 @@
-    .Body {
+ .Body {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .main {
@@ -66,29 +67,101 @@
     .form-control {
       border-radius: 8px;
       padding: 12px;
+      margin: 8px 0;
     }
+    
     .btn-custom {
-  background: linear-gradient(135deg, #6d44b8, #573b8a);
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 12px;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(87, 59, 138, 0.4);
-  transition: all 0.3s ease;
-}
+      background: linear-gradient(135deg, #6d44b8, #573b8a);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(87, 59, 138, 0.4);
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
 
-.btn-custom:hover {
-  background: linear-gradient(135deg, #7e57c2, #6842a0);
-  box-shadow: 0 8px 20px rgba(87, 59, 138, 0.6);
-  transform: translateY(-2px);
-}
+    .btn-custom:hover {
+      background: linear-gradient(135deg, #7e57c2, #6842a0);
+      box-shadow: 0 8px 20px rgba(87, 59, 138, 0.6);
+      transform: translateY(-2px);
+    }
 
-.btn-custom:active {
-  transform: scale(0.95);
-  box-shadow: 0 4px 10px rgba(87, 59, 138, 0.5);
-}
+    .btn-custom:active {
+      transform: scale(0.95);
+      box-shadow: 0 4px 10px rgba(87, 59, 138, 0.5);
+    }
+    
+    /* Social login styles */
+    .social-container {
+      text-align: center;
+      margin: 20px 0 15px;
+    }
+    
+    .social-divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: #777;
+    }
+    
+    .social-divider::before,
+    .social-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #ddd;
+    }
+    
+    .social-divider span {
+      padding: 0 12px;
+      font-size: 0.9rem;
+    }
+    
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .social-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .google {
+      background: #DB4437;
+    }
+    
+    .facebook {
+      background: #4267B2;
+    }
+    
+    .linkedin {
+      background: #0077B5;
+    }
+    
+    .form-container {
+      padding: 0 30px;
+    }
 
 /* index style */
  :root {
