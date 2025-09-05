@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobSeeker Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External CSS -->
+   <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar d-flex flex-column" id="sidebarMenu">
+    <h5 class="text-center text-white mb-4">JobSeeker</h5>
+    <ul class="nav nav-pills flex-column" id="dashboardTabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#profile-add"><i class="fas fa-user-plus"></i><span>Add
+            Profile</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#profile-detail"><i class="fas fa-user"></i><span>Profile
+            Details</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#my-applications"><i class="fas fa-briefcase"></i><span>My
+            Applications</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#job-list"><i class="fas fa-list"></i><span>Job Listings</span></a>
+      </li>
+    </ul>
+    <a href="./sign_in_up_page.html" class="mt-auto"><i class="fas fa-sign-out-alt"></i><span> Logout</span></a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm mb-4">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-link d-md-none me-2" id="menuToggle"><i class="fas fa-bars fa-lg"></i></button>
+        <h5 class="mb-0">JobSeeker Dashboard</h5>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="fas fa-user-circle me-2"></i> Soby Francis
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="./sign_in_up_page.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid my-4">
+      <!-- Tab Pages -->
+      <div class="tab-content">
+        <!-- Profile Add Page -->
+        <div id="profile-add" class="tab-pane fade show active p-4 bg-white rounded shadow-sm">
+          <h2 class="mb-4">Create Your Profile</h2>
+          <form id="profile-form">
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your full name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Professional Title</label>
+              <input type="text" class="form-control" placeholder="e.g. Software Engineer">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Years of Experience</label>
+              <select class="form-select">
+                <option value="">Select experience level</option>
+                <option>Entry Level (0-2 years)</option>
+                <option>Mid Level (3-5 years)</option>
+                <option>Senior Level (5+ years)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Skills</label>
+              <input type="text" class="form-control" placeholder="e.g. JavaScript, React, Node.js">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Education</label>
+              <textarea class="form-control" rows="3" placeholder="List your educational background"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Upload Resume</label>
+              <input type="file" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Profile</button>
+          </form>
+        </div>
+
+        <!-- Profile Details -->
+        <div id="profile-detail" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <h2>My Profile</h2>
+          <div class="d-flex align-items-center flex-column flex-md-row mb-4">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&size=120&background=3498db&color=fff"
+              class="rounded-circle border border-4 border-primary me-md-4 mb-3 mb-md-0" width="120" height="120">
+            <div>
+              <h3>SOby Francis</h3>
+              <p class="text-muted">Senior Software Engineer</p>
+              <p><i class="fas fa-map-marker-alt"></i> Ernakulam, CA</p>
+              <span class="badge status active px-3 py-2">Active Job Seeker</span>
+            </div>
+          </div>
+          <h4>About Me</h4>
+          <p>Experienced software engineer with 5+ years of expertise...</p>
+
+          <h4>Skills</h4>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+          </div>
+
+          <h4>Experience</h4>
+          <p><strong>Senior Developer</strong> at TechCorp (2019 - Present)</p>
+          <p><strong>Software Engineer</strong> at WebSolutions Inc. (2017 - 2019)</p>
+
+          <h4>Education</h4>
+          <p>BS in Computer Science, Stanford University (2013 - 2017)</p>
+
+          <button class="btn btn-primary">Edit Profile</button>
+        </div>
+
+        <!-- My Applications -->
+        <div id="my-applications" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <h2>My Job Applications</h2>
+          <div class="application-card p-3 mb-3 rounded shadow-sm">
+            <h5 class="fw-bold">Senior Frontend Developer</h5>
+            <p class="text-muted">TechInnovate Inc.</p>
+            <p><i class="fas fa-map-marker-alt"></i> Remote | <i class="fas fa-dollar-sign"></i> $110k - $130k |
+              Applied: 3 days ago</p>
+            <span class="badge status pending px-3 py-2">Under Review</span>
+          </div>
+        </div>
+
+        <!-- Job Listings -->
+        <div id="job-list" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <h2>Available Job Listings</h2>
+          <div class="job-card p-3 mb-3 rounded shadow-sm">
+            <h5 class="fw-bold">Senior React Developer</h5>
+            <p class="text-muted">InnovateTech Solutions</p>
+            <p><i class="fas fa-map-marker-alt"></i> Remote | <i class="fas fa-dollar-sign"></i> $120k - $145k</p>
+            <div class="d-flex flex-wrap gap-2 mb-2">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Redux</span>
+            </div>
+            <button class="btn btn-primary">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+      <p class="mb-0">&copy; 2025 CareerHub. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+
+</html>
