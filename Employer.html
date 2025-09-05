@@ -13,20 +13,30 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- External CSS -->
-   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <!-- Sidebar -->
   <nav class="sidebar d-flex flex-column" id="sidebarMenu">
     <h5 class="text-center text-white mb-4">Employer Portal</h5>
-    <a href="#" class="active"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="#profile-add"><i class="fas fa-user-plus"></i><span>Add Profile</span></a>
-    <a href="#profile-detail"><i class="fas fa-user"></i><span>Profile Details</span></a>
-    <a href="#job-add"><i class="fas fa-briefcase"></i><span>Add Job</span></a>
-    <a href="#job-list"><i class="fas fa-list"></i><span>Job Listings</span></a>
-    <a href="#applicants-list"><i class="fas fa-users"></i><span>Applicants</span></a>
-    <a href="#" class="mt-auto"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+    <ul class="nav nav-pills flex-column" id="dashboardTabs">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" data-bs-toggle="tab"><i
+            class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+      </li>
+      <li class="nav-item"><a href="#profile-add" data-bs-toggle="tab"><i class="fas fa-user-plus"></i><span>Add
+            Profile</span></a></li>
+      <li class="nav-item"> <a class="nav-link" href="#profile-detail" data-bs-toggle="tab"><i
+            class="fas fa-user"></i><span>Profile Details</span></a></li>
+      <li class="nav-item"><a class="nav-link" href="#job-add" data-bs-toggle="tab"><i
+            class="fas fa-briefcase"></i><span>Add Job</span></a></li>
+      <li class="nav-item"><a class="nav-link" href="#job-list" data-bs-toggle="tab"><i
+            class="fas fa-list"></i><span>Job Listings</span></a></li>
+      <li class="nav-item"><a class="nav-link" href="#applicants-list" data-bs-toggle="tab"><i
+            class="fas fa-users"></i><span>Applicants</span></a></li>
+    </ul>
+    <a href="./sign_in_up_page.html" class="mt-auto"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
   </nav>
 
   <!-- Main Content -->
@@ -51,279 +61,283 @@
         </ul>
       </div>
     </div>
-
-    <!-- Dashboard Stats -->
-    <div class="row g-3 mb-4">
-      <div class="col-sm-6 col-lg-3">
-        <div class="card text-center shadow-sm">
+    <div class="container-fluid my-4">
+      <!-- Tab Pages -->
+      <div class="tab-content">
+        <!-- Dashboard Stats -->
+        <div id="dashboard" class="tab-pane fade show active">
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-center shadow-sm">
+                <div class="card-body">
+                  <h3 class="text-primary">12</h3>
+                  <p class="fw-semibold text-muted">Active Jobs</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-center shadow-sm">
+                <div class="card-body">
+                  <h3 class="text-primary">84</h3>
+                  <p class="fw-semibold text-muted">Applications</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-center shadow-sm">
+                <div class="card-body">
+                  <h3 class="text-primary">5</h3>
+                  <p class="fw-semibold text-muted">Interviews</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-center shadow-sm">
+                <div class="card-body">
+                  <h3 class="text-primary">92%</h3>
+                  <p class="fw-semibold text-muted">Profile Complete</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Profile Add -->
+        <div id="profile-add" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <div class="card-header fw-bold">Add Company Profile</div>
           <div class="card-body">
-            <h3 class="text-primary">12</h3>
-            <p class="fw-semibold text-muted">Active Jobs</p>
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Company Name</label>
+                <input type="text" class="form-control" placeholder="Enter company name">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Industry</label>
+                <select class="form-select">
+                  <option>Select industry</option>
+                  <option>Technology</option>
+                  <option>Finance</option>
+                  <option>Healthcare</option>
+                  <option>Education</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Email</label>
+                <input type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Phone</label>
+                <input type="tel" class="form-control" placeholder="Enter phone">
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Description</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Website</label>
+                <input type="url" class="form-control" placeholder="https://example.com">
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary">Save Profile</button>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="card text-center shadow-sm">
+
+        <!-- Profile Details -->
+        <div id="profile-detail" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <div class="card-header fw-bold">Company Profile Details</div>
           <div class="card-body">
-            <h3 class="text-primary">84</h3>
-            <p class="fw-semibold text-muted">Applications</p>
+            <div class="row g-4 align-items-center">
+              <div class="col-md-3 text-center">
+                <img src="./image/logo.png" class="img-fluid rounded-circle border shadow-sm" alt="Company Logo">
+                <h5 class="mt-3">Tech Innovators Ltd.</h5>
+                <p class="text-muted mb-0">Technology Industry</p>
+              </div>
+              <div class="col-md-9">
+                <dl class="row mb-0">
+                  <dt class="col-sm-4">Email</dt>
+                  <dd class="col-sm-8">contact@techinnovators.com</dd>
+                  <dt class="col-sm-4">Phone</dt>
+                  <dd class="col-sm-8">+91 234 567 8900</dd>
+                  <dt class="col-sm-4">Website</dt>
+                  <dd class="col-sm-8"><a href="https://www.techinnovators.com"
+                      target="_blank">www.techinnovators.com</a>
+                  </dd>
+                  <dt class="col-sm-4">Location</dt>
+                  <dd class="col-sm-8">Ernakulam, India</dd>
+                  <dt class="col-sm-4">Description</dt>
+                  <dd class="col-sm-8">
+                    Tech Innovators Ltd. is a leading provider of innovative software solutions,
+                    specializing in AI, cloud computing, and mobile app development.
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-end gap-2">
+            <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-edit me-1"></i> Edit</button>
+            <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt me-1"></i> Delete</button>
           </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="card text-center shadow-sm">
+
+        <!-- Job Add -->
+        <div id="job-add" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <div class="card-header fw-bold">Add New Job</div>
           <div class="card-body">
-            <h3 class="text-primary">5</h3>
-            <p class="fw-semibold text-muted">Interviews</p>
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Job Title</label>
+                <input type="text" class="form-control" placeholder="e.g. Senior Web Developer">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Job Type</label>
+                <select class="form-select">
+                  <option>Select job type</option>
+                  <option>Full-time</option>
+                  <option>Part-time</option>
+                  <option>Contract</option>
+                  <option>Internship</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Location</label>
+                <input type="text" class="form-control" placeholder="e.g. New York, NY">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Salary Range</label>
+                <input type="text" class="form-control" placeholder="e.g. $80,000 - $100,000">
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Job Description</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Requirements</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary">Post Job</button>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="card text-center shadow-sm">
+
+        <!-- Job List -->
+        <div id="job-list" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="fw-bold">Job Listings</span>
+            <button class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>Add New</button>
+          </div>
           <div class="card-body">
-            <h3 class="text-primary">92%</h3>
-            <p class="fw-semibold text-muted">Profile Complete</p>
+            <div class="list-group">
+              <div class="list-group-item border-start border-4 border-primary mb-2">
+                <div class="d-flex justify-content-between">
+                  <h6>Senior Frontend Developer</h6>
+                  <small class="text-success">Active</small>
+                </div>
+                <p class="mb-1 text-muted">Ernakulam • Full-time • $100,000 - $130,000</p>
+                <small>Posted 2 days ago • 24 applications</small>
+                <div class="mt-2">
+                  <button class="btn btn-outline-primary btn-sm me-1">View Applications</button>
+                  <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
+                  <button class="btn btn-outline-danger btn-sm">Close</button>
+                </div>
+              </div>
+              <div class="list-group-item border-start border-4 border-primary mb-2">
+                <div class="d-flex justify-content-between">
+                  <h6>UX/UI Designer</h6>
+                  <small class="text-success">Active</small>
+                </div>
+                <p class="mb-1 text-muted">Remote • Contract • $45 - $65/hour</p>
+                <small>Posted 1 week ago • 18 applications</small>
+                <div class="mt-2">
+                  <button class="btn btn-outline-primary btn-sm me-1">View Applications</button>
+                  <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
+                  <button class="btn btn-outline-danger btn-sm">Close</button>
+                </div>
+              </div>
+              <div class="list-group-item border-start border-4 border-warning mb-2">
+                <div class="d-flex justify-content-between">
+                  <h6>DevOps Engineer</h6>
+                  <small class="text-warning">Draft</small>
+                </div>
+                <p class="mb-1 text-muted">Trivandrum • Full-time • $120,000 - $150,000</p>
+                <small>Saved 3 days ago • Not published</small>
+                <div class="mt-2">
+                  <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
+                  <button class="btn btn-outline-success btn-sm">Publish</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Profile Add -->
-    <div id="profile-add" class="card shadow-sm mb-4">
-      <div class="card-header fw-bold">Add Company Profile</div>
-      <div class="card-body">
-        <form class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Company Name</label>
-            <input type="text" class="form-control" placeholder="Enter company name">
+        <!-- Applicants -->
+        <div id="applicants-list" class="tab-pane fade p-4 bg-white rounded shadow-sm">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="fw-bold">Applicants List</span>
+            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-download me-1"></i> Export</button>
           </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Industry</label>
-            <select class="form-select">
-              <option>Select industry</option>
-              <option>Technology</option>
-              <option>Finance</option>
-              <option>Healthcare</option>
-              <option>Education</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Email</label>
-            <input type="email" class="form-control" placeholder="Enter email">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Phone</label>
-            <input type="tel" class="form-control" placeholder="Enter phone">
-          </div>
-          <div class="col-12">
-            <label class="form-label fw-semibold">Description</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-          <div class="col-12">
-            <label class="form-label fw-semibold">Website</label>
-            <input type="url" class="form-control" placeholder="https://example.com">
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary">Save Profile</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Profile Details -->
-    <div id="profile-detail" class="card shadow-sm mb-4">
-      <div class="card-header fw-bold">Company Profile Details</div>
-      <div class="card-body">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-3 text-center">
-            <img src="./image/logo.png" class="img-fluid rounded-circle border shadow-sm" alt="Company Logo">
-            <h5 class="mt-3">Tech Innovators Ltd.</h5>
-            <p class="text-muted mb-0">Technology Industry</p>
-          </div>
-          <div class="col-md-9">
-            <dl class="row mb-0">
-              <dt class="col-sm-4">Email</dt>
-              <dd class="col-sm-8">contact@techinnovators.com</dd>
-              <dt class="col-sm-4">Phone</dt>
-              <dd class="col-sm-8">+91 234 567 8900</dd>
-              <dt class="col-sm-4">Website</dt>
-              <dd class="col-sm-8"><a href="https://www.techinnovators.com" target="_blank">www.techinnovators.com</a></dd>
-              <dt class="col-sm-4">Location</dt>
-              <dd class="col-sm-8">Ernakulam, India</dd>
-              <dt class="col-sm-4">Description</dt>
-              <dd class="col-sm-8">
-                Tech Innovators Ltd. is a leading provider of innovative software solutions,
-                specializing in AI, cloud computing, and mobile app development.
-              </dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-      <div class="card-footer d-flex justify-content-end gap-2">
-        <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-edit me-1"></i> Edit</button>
-        <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt me-1"></i> Delete</button>
-      </div>
-    </div>
-
-    <!-- Job Add -->
-    <div id="job-add" class="card shadow-sm mb-4">
-      <div class="card-header fw-bold">Add New Job</div>
-      <div class="card-body">
-        <form class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Job Title</label>
-            <input type="text" class="form-control" placeholder="e.g. Senior Web Developer">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Job Type</label>
-            <select class="form-select">
-              <option>Select job type</option>
-              <option>Full-time</option>
-              <option>Part-time</option>
-              <option>Contract</option>
-              <option>Internship</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Location</label>
-            <input type="text" class="form-control" placeholder="e.g. New York, NY">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label fw-semibold">Salary Range</label>
-            <input type="text" class="form-control" placeholder="e.g. $80,000 - $100,000">
-          </div>
-          <div class="col-12">
-            <label class="form-label fw-semibold">Job Description</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-          <div class="col-12">
-            <label class="form-label fw-semibold">Requirements</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary">Post Job</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Job List -->
-    <div id="job-list" class="card shadow-sm mb-4">
-      <div class="card-header d-flex justify-content-between align-items-center">
-        <span class="fw-bold">Job Listings</span>
-        <button class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>Add New</button>
-      </div>
-      <div class="card-body">
-        <div class="list-group">
-          <div class="list-group-item border-start border-4 border-primary mb-2">
-            <div class="d-flex justify-content-between">
-              <h6>Senior Frontend Developer</h6>
-              <small class="text-success">Active</small>
-            </div>
-            <p class="mb-1 text-muted">Ernakulam • Full-time • $100,000 - $130,000</p>
-            <small>Posted 2 days ago • 24 applications</small>
-            <div class="mt-2">
-              <button class="btn btn-outline-primary btn-sm me-1">View Applications</button>
-              <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
-              <button class="btn btn-outline-danger btn-sm">Close</button>
-            </div>
-          </div>
-          <div class="list-group-item border-start border-4 border-primary mb-2">
-            <div class="d-flex justify-content-between">
-              <h6>UX/UI Designer</h6>
-              <small class="text-success">Active</small>
-            </div>
-            <p class="mb-1 text-muted">Remote • Contract • $45 - $65/hour</p>
-            <small>Posted 1 week ago • 18 applications</small>
-            <div class="mt-2">
-              <button class="btn btn-outline-primary btn-sm me-1">View Applications</button>
-              <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
-              <button class="btn btn-outline-danger btn-sm">Close</button>
-            </div>
-          </div>
-          <div class="list-group-item border-start border-4 border-warning mb-2">
-            <div class="d-flex justify-content-between">
-              <h6>DevOps Engineer</h6>
-              <small class="text-warning">Draft</small>
-            </div>
-            <p class="mb-1 text-muted">Trivandrum • Full-time • $120,000 - $150,000</p>
-            <small>Saved 3 days ago • Not published</small>
-            <div class="mt-2">
-              <button class="btn btn-outline-secondary btn-sm me-1">Edit</button>
-              <button class="btn btn-outline-success btn-sm">Publish</button>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table align-middle table-hover">
+                <thead class="table-light">
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Applied On</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><img src="./image/sara.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                      Sarah
+                      Marry</td>
+                    <td>Senior Frontend Developer</td>
+                    <td>May 15, 2023</td>
+                    <td><span class="badge bg-warning">Review</span></td>
+                    <td><button class="btn btn-sm btn-primary">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><img src="./image/jhon.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"> Jhon
+                    </td>
+                    <td>UX/UI Designer</td>
+                    <td>May 14, 2023</td>
+                    <td><span class="badge bg-info">Interview</span></td>
+                    <td><button class="btn btn-sm btn-primary">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><img src="./image/John-Wick.webp" class="rounded-circle me-2"
+                        style="width: 40px; height: 40px;">
+                      John Wick</td>
+                    <td>DevOps Engineer</td>
+                    <td>May 10, 2023</td>
+                    <td><span class="badge bg-success">Hired</span></td>
+                    <td><button class="btn btn-sm btn-primary">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><img src="./image/villa.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                      David
+                      Villa</td>
+                    <td>Senior Full Stack Developer</td>
+                    <td>May 9, 2023</td>
+                    <td><span class="badge bg-danger">Rejected</span></td>
+                    <td><button class="btn btn-sm btn-primary">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Applicants -->
-    <div id="applicants-list" class="card shadow-sm mb-4">
-      <div class="card-header d-flex justify-content-between align-items-center">
-        <span class="fw-bold">Applicants List</span>
-        <button class="btn btn-outline-primary btn-sm"><i class="fas fa-download me-1"></i> Export</button>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table align-middle table-hover">
-            <thead class="table-light">
-              <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Applied On</th>
-                <th>Status</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><img src="./image/sara.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"> Sarah Marry</td>
-                <td>Senior Frontend Developer</td>
-                <td>May 15, 2023</td>
-                <td><span class="badge bg-warning">Review</span></td>
-                <td><button class="btn btn-sm btn-primary">View</button></td>
-              </tr>
-              <tr>
-                <td><img src="./image/jhon.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"> Jhon</td>
-                <td>UX/UI Designer</td>
-                <td>May 14, 2023</td>
-                <td><span class="badge bg-info">Interview</span></td>
-                <td><button class="btn btn-sm btn-primary">View</button></td>
-              </tr>
-              <tr>
-                <td><img src="./image/John-Wick.webp" class="rounded-circle me-2" style="width: 40px; height: 40px;"> John Wick</td>
-                <td>DevOps Engineer</td>
-                <td>May 10, 2023</td>
-                <td><span class="badge bg-success">Hired</span></td>
-                <td><button class="btn btn-sm btn-primary">View</button></td>
-              </tr>
-              <tr>
-                <td><img src="./image/villa.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"> David Villa</td>
-                <td>Senior Full Stack Developer</td>
-                <td>May 9, 2023</td>
-                <td><span class="badge bg-danger">Rejected</span></td>
-                <td><button class="btn btn-sm btn-primary">View</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-4">
       <p class="mb-0">&copy; 2025 CareerHub. All rights reserved.</p>
     </footer>
   </main>
-
-  <!-- Sidebar Toggle Script -->
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const sidebar = document.getElementById("sidebarMenu");
-
-    menuToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("active");
-    });
-  </script>
 </body>
+
 </html>
